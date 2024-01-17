@@ -1,0 +1,72 @@
+* {
+  font-family: "Yekan Bakh";
+}
+.imageSlider {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  height: 15px;
+  width: 15px;
+  background: #f45d96;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+  margin-top: -50px;
+  border: none;
+}
+
+.btn:hover {
+  border: 1px solid #111111;
+}
+
+.active {
+  border: 1px solid #111111;
+  background: #fc2879;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  text-align: center;
+  position: absolute;
+  margin-left: 50px;
+}
+.textHead {
+  font-size: 18px;
+  color: #111111;
+  font-weight: 700;
+  cursor: default;
+}
+.textTitle {
+  color: #111111;
+  font-size: 43px;
+  cursor: default;
+}
+.textBtn {
+  font-size: 22px;
+  color: #ffffff;
+  background: #f45d96;
+  border-radius: 50px;
+  border: none;
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.textBtn:hover {
+  background: #fc2879;
+}
