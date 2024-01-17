@@ -1,0 +1,74 @@
+.headerContainer {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* logo */
+.logo {
+  width: 200px;
+  height: 80px;
+}
+
+/* links */
+.linkContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.link {
+  font-size: 18px;
+  font-family: "IRANSans";
+  color: #111111;
+  display: inline-block;
+  font-weight: 500;
+  padding: 10px 0;
+  position: relative;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #f45d96;
+  bottom: 0;
+  right: 0;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+  color: #f45d96;
+}
+
+.link:hover {
+  color: #f45d96;
+}
+/* icons */
+.iconsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.badge {
+  color: red;
+  font-size: 18px;
+  margin-left: -5px;
+}
+
+.iconBadge {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
