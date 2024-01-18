@@ -1,66 +1,49 @@
-import React from 'react'
+import React from "react";
 import styles from "./Header.module.css";
 import logo from "../../../src/assets/Logo.png";
 import { IoIosSearch } from "react-icons/io";
 import { CiHeart } from "react-icons/ci";
 import { IoBagHandle } from "react-icons/io5";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [likes , setLikes] = useState([])
-  const [shoppingCard , setShoppingCard] = useState([])
+  const [likes, setLikes] = useState([]);
+  const [shoppingCard, setShoppingCard] = useState([]);
   return (
     <div className={styles.headerContainer}>
       {/* ICONS */}
       <div className={styles.iconsContainer}>
         <div>
-          <IoIosSearch fontSize="30px" style={{cursor : 'pointer'}}/>
+          <IoIosSearch fontSize="30px" style={{ cursor: "pointer" }} />
         </div>
         <div className={styles.iconBadge}>
-          <CiHeart fontSize="30px" style={{cursor : 'pointer'}}/> <span className={styles.badge}>{likes.length}</span>
+          <CiHeart fontSize="30px" style={{ cursor: "pointer" }} />{" "}
+          <span className={styles.badge}>{likes.length}</span>
         </div>
         <div className={styles.iconBadge}>
-          <IoBagHandle fontSize="30px" style={{cursor : 'pointer'}}/>{" "}
+          <IoBagHandle fontSize="30px" style={{ cursor: "pointer" }} />{" "}
           <span className={styles.badge}>{shoppingCard.length}</span>
         </div>
       </div>
 
       {/* MENU */}
-      <div>
-        <ul className={styles.linkContainer}>
-          <li>
-            {" "}
-            <a className={styles.link} href="/home">
-              خانه
-            </a>{" "}
-          </li>
-          <li>
-            {" "}
-            <a className={styles.link} href="/shop">
-              فروشگاه
-            </a>{" "}
-          </li>
-          <li>
-            {" "}
-            <a className={styles.link} href="/services">
-              خدمات
-            </a>{" "}
-          </li>
-          <li>
-            {" "}
-            <a className={styles.link} href="/contact-us">
-              {" "}
-              تماس با ما
-            </a>
-          </li>
-          <li>
-            {" "}
-            <a className={styles.link} href="/about-us">
-              {" "}
-              درباره ما
-            </a>
-          </li>
-        </ul>
+      <div className={styles.linkContainer}>
+        <Link className={styles.link} to="/home">
+          خانه
+        </Link>
+        <Link className={styles.link} to="/products">
+          محصولات
+        </Link>
+        <Link className={styles.link} to="/services">
+          خدمات تخصصی
+        </Link>
+        <Link className={styles.link} to="/contact-us">
+          ارتباط با ما
+        </Link>
+        <Link className={styles.link} to="/about-us">
+          درباره ما
+        </Link>
       </div>
 
       {/* LOGO */}

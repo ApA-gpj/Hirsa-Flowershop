@@ -21,6 +21,10 @@
   gap: 50px;
 }
 
+.linkContainer a.active {
+  color:  #f45d96;
+}
+
 .link {
   font-size: 18px;
   font-family: "IRANSans";
