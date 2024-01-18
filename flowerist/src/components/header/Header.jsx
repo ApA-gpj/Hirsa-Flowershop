@@ -8,23 +8,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+
   const [likes, setLikes] = useState([]);
+
   const [shoppingCard, setShoppingCard] = useState([]);
+
   return (
+
     <div className={styles.headerContainer}>
-      {/* ICONS */}
-      <div className={styles.iconsContainer}>
-        <div>
-          <IoIosSearch fontSize="30px" style={{ cursor: "pointer" }} />
-        </div>
-        <div className={styles.iconBadge}>
-          <CiHeart fontSize="30px" style={{ cursor: "pointer" }} />{" "}
-          <span className={styles.badge}>{likes.length}</span>
-        </div>
-        <div className={styles.iconBadge}>
-          <IoBagHandle fontSize="30px" style={{ cursor: "pointer" }} />{" "}
-          <span className={styles.badge}>{shoppingCard.length}</span>
-        </div>
+
+      {/* LOGO */}
+      <div>
+        <img src={logo} alt="Hirsa Logo" className={styles.logo} />
       </div>
 
       {/* MENU */}
@@ -46,10 +41,21 @@ const Header = () => {
         </Link>
       </div>
 
-      {/* LOGO */}
-      <div>
-        <img src={logo} alt="Hirsa Logo" className={styles.logo} />
+      {/* ICONS */}
+      <div className={styles.iconsContainer}>
+        <div>
+          <IoIosSearch fontSize="30px" style={{ cursor: "pointer" }} />
+        </div>
+        <div className={styles.iconBadge}>
+          <CiHeart fontSize="30px" style={{ cursor: "pointer" }} />{" "}
+          <span className={styles.badge}>{likes.length}</span>
+        </div>
+        <div className={styles.iconBadge}>
+          <IoBagHandle fontSize="30px" style={{ cursor: "pointer" }} />{" "}
+          <span className={styles.badge}>{shoppingCard.length}</span>
+        </div>
       </div>
+      
     </div>
   );
 };
