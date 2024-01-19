@@ -36,9 +36,10 @@
   border-radius: 5%;
 }
 .textContent {
-  background: white;
+  background: rgba(255, 255, 255, 0.8);
   width: 200px;
   border-radius: 5%;
   margin-top: -140px;
-  border: 2px solid #f45d96;
+  color:  black;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5)
 }

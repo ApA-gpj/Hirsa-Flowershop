@@ -1,0 +1,119 @@
+/* products container */
+.productsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.productsHead {
+  color: #f45d96;
+  font-size: 32px;
+}
+.productsCategories {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+.productsCatBtn {
+  font-size: 16px;
+  color: #111111;
+  display: inline-block;
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+.productsCatBtn:hover {
+  border-bottom: 2px solid #f45d96;
+  color: #f45d96;
+}
+
+.productCardContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 20px;
+}
+
+/* product Card */
+.productCard {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.productImg {
+  width: 260px;
+  height: 340px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #1111118e;
+}
+.productTitle {
+  font-size: 20px;
+  font-weight: 500;
+}
+.productBtn {
+  background: #f45d96;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  transition: ease 0.3s;
+}
+.productBtn:hover {
+  background: #fc2879;
+}
+.productPrice {
+  color: #111111;
+  font-size: 16px;
+  font-weight: 600;
+}
+.toman {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 320px;
+  gap: 10px;
+}
+
+.btnContent {
+  background-color: white;
+  border-radius: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.5s ease;
+
+}
+
+.btnIcon {
+  font-size: 24px;
+}
+
+.btnContent:hover {
+  transform: rotate(360deg);
+  background-color: #f45d96;
+  color: white;
+}

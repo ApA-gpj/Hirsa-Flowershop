@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Categories.module.css";
 import CategoryCard from "./CategoryCard";
 
-
 const Categories = () => {
   const categoryArr = [
     {
@@ -33,13 +32,13 @@ const Categories = () => {
 
   return (
     <>
-    <h3 className={styles.categoryHeadTitle}>دسته بندی‌ها</h3>
+      <h3 className={styles.categoryHeadTitle}>دسته بندی‌ها</h3>
       <div className={styles.categoryContainer}>
         {categoryArr.map((item) => (
           <CategoryCard {...item} key={item.id} />
-          ))}
+        ))}
       </div>
-          </>
+    </>
   );
 };
 
