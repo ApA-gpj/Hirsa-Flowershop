@@ -2,12 +2,22 @@ import React, { useRef, useState } from "react";
 import styles from "./Products.module.css";
 import { CiHeart } from "react-icons/ci";
 import { IoBagHandle } from "react-icons/io5";
+import productImage1 from '../../assets/productsImages/product1.webp'
+import productImage2 from '../../assets/productsImages/product2.webp'
+import productImage3 from '../../assets/productsImages/product3.webp'
+import productImage4 from '../../assets/productsImages/product4.webp'
+import productImage5 from '../../assets/productsImages/product5.webp'
+import productImage6 from '../../assets/productsImages/product6.webp'
+import productImage7 from '../../assets/productsImages/product7.webp'
+import productImage8 from '../../assets/productsImages/product8.webp'
+import productImage9 from '../../assets/productsImages/product9.webp'
+import productImage10 from '../../assets/productsImages/product10.webp'
 
 const ProductCard = () => {
   const productsArr = [
     {
       id: 1,
-      imgSrc: "../../src/assets/productsImages/product1.webp",
+      imgSrc: productImage1,
       title: "شاخه گل رز سرخ طبیعی",
       price: 60_000,
       category: "singleFlower",
@@ -16,7 +26,7 @@ const ProductCard = () => {
     },
     {
       id: 2,
-      imgSrc: "../../src/assets/productsImages/product2.webp",
+      imgSrc: productImage2,
       title: "شاخه گل نرگس طبیعی",
       price: 60_000,
       category: "singleFlower",
@@ -25,7 +35,7 @@ const ProductCard = () => {
     },
     {
       id: 3,
-      imgSrc: "../../src/assets/productsImages/product3.webp",
+      imgSrc: productImage3,
       title: "گل آپارتمانی کروتون",
       price: 1_500_000,
       category: "apartement",
@@ -34,7 +44,7 @@ const ProductCard = () => {
     },
     {
       id: 4,
-      imgSrc: "../../src/assets/productsImages/product4.webp",
+      imgSrc: productImage4,
       title: "گل آپارتمانی بابا آدم",
       price: 2_500_000,
       category: "apartement",
@@ -43,7 +53,7 @@ const ProductCard = () => {
     },
     {
       id: 5,
-      imgSrc: "../../src/assets/productsImages/product5.webp",
+      imgSrc: productImage5,
       title: "دسته گل ویژه هیرسا",
       price: 1_250_000,
       category: "packedFlower",
@@ -52,7 +62,7 @@ const ProductCard = () => {
     },
     {
       id: 6,
-      imgSrc: "../../src/assets/productsImages/product6.webp",
+      imgSrc: productImage6,
       title: "دسته گل عروس",
       price: 4_000_000,
       category: "packedFlower",
@@ -61,7 +71,7 @@ const ProductCard = () => {
     },
     {
       id: 7,
-      imgSrc: "../../src/assets/productsImages/product7.webp",
+      imgSrc: productImage7,
       title: "تاج گل ختمی",
       price: 3_000_000,
       category: "wreath",
@@ -70,7 +80,7 @@ const ProductCard = () => {
     },
     {
       id: 8,
-      imgSrc: "../../src/assets/productsImages/product8.webp",
+      imgSrc: productImage8,
       title: "تاج گل هپی مپی",
       price: 3_500_000,
       category: "wreath",
@@ -79,7 +89,7 @@ const ProductCard = () => {
     },
     {
       id: 9,
-      imgSrc: "../../src/assets/productsImages/product9.webp",
+      imgSrc: productImage9,
       title: "پک کادویی ولنتاین",
       price: 1_500_000,
       category: "giftPacked",
@@ -88,7 +98,7 @@ const ProductCard = () => {
     },
     {
       id: 10,
-      imgSrc: "../../src/assets/productsImages/product10.webp",
+      imgSrc: productImage10,
       title: "پک کادویی تولد",
       price: 1_500_000,
       category: "giftPacked",
