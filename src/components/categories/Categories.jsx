@@ -1,30 +1,34 @@
 import React from "react";
 import styles from "./Categories.module.css";
 import CategoryCard from "./CategoryCard";
+import categoryImg1 from "/src/assets/categories1.webp";
+import categoryImg2 from "/src/assets/categories2.webp";
+import categoryImg3 from "/src/assets/categories3.webp";
+import categoryImg4 from "/src/assets/categories4.webp";
 
 const Categories = () => {
   const categoryArr = [
     {
       id: 1,
-      src: "/src/assets/categories1.webp",
+      src: categoryImg1,
       title: "گل‌های طبیعی",
       quantity: 25,
     },
     {
       id: 2,
-      src: "/src/assets/categories2.webp",
+      src: categoryImg2,
       title: "گیاهان آپارتمانی",
       quantity: 162,
     },
     {
       id: 3,
-      src: "/src/assets/categories3.webp",
+      src: categoryImg3,
       title: "کاکتوس‌ها",
       quantity: 58,
     },
     {
       id: 4,
-      src: "/src/assets/categories4.webp",
+      src: categoryImg4,
       title: "گیاهان زینتی",
       quantity: 25,
     },
