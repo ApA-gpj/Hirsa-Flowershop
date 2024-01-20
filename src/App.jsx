@@ -7,6 +7,7 @@ import sliderImg2 from "./assets/hero2.jpg";
 import Benefits from "./components/benefits/Benefits";
 import Categories from "./components/categories/Categories";
 import Products from "./components/products/Products";
+import Customize from "./components/customize/Customize";
 
 function App() {
   const imageUrls = [sliderImg1, sliderImg2];
@@ -18,6 +19,7 @@ function App() {
       <Benefits />
       <Categories />
       <Products />
+      <Customize />
     </>
   );
 }
