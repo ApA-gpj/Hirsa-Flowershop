@@ -8,6 +8,10 @@ import Benefits from "./components/benefits/Benefits";
 import Categories from "./components/categories/Categories";
 import Products from "./components/products/Products";
 import Customize from "./components/customize/Customize";
+import Instagram from "./components/instagram/Instagram";
+import Footer from "./components/footer/Footer";
+
+
 
 function App() {
   const imageUrls = [sliderImg1, sliderImg2];
@@ -20,6 +24,8 @@ function App() {
       <Categories />
       <Products />
       <Customize />
+      <Instagram/>
+      <Footer />
     </>
   );
 }
