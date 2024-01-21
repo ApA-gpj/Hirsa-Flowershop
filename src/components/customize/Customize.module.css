@@ -31,12 +31,25 @@
 .iconsContainer {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
   justify-content: center;
   align-items: center;
 }
+.socialMediaLink {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  color: #000;
+}
+.socialMediaLink:hover {
+  color: #f45d96;
+}
 .callicon {
   font-size: 32px;
-  color: #f45d96;
+  color: #000;
 }
