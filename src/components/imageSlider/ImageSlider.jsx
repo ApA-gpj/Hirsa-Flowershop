@@ -28,6 +28,13 @@ const ImageSlider = () => {
     return () => clearTimeout(timeoutId);
   }, [currentIndex]);
 
+  const shopHandler = () => {
+    window.scrollTo({
+      top: 1300,
+      behavior: "smooth"
+    });
+  }
+
   return (
     <div className={styles.imageSlider}>
       {/* image container */}
@@ -43,7 +50,7 @@ const ImageSlider = () => {
       <div className={styles.textContainer}>
         <p className={styles.textHead}>گل‌های تازه، هدیه‌هایی جذاب</p>
         <h2 className={styles.textTitle}>گل‌های زیبا را بخشی از زندگی خود کنید</h2>
-        <button className={styles.textBtn}>خرید</button>
+        <button className={styles.textBtn} onClick={shopHandler}>خرید</button>
       </div>
 
       {/* button container */}

@@ -25,10 +25,12 @@
   cursor: pointer;
   border: 2px solid transparent;
   transition: 0.3s ease;
+  background: transparent;
 }
 .productsCatBtn:hover {
   border-bottom: 2px solid #f45d96;
   color: #f45d96;
+  background: #00000011;
 }
 
 .productCardContainer {

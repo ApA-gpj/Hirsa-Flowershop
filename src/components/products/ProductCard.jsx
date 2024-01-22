@@ -14,7 +14,7 @@ import productImage9 from '../../assets/productsImages/product9.webp'
 import productImage10 from '../../assets/productsImages/product10.webp'
 
 const ProductCard = () => {
-  const productsArr = [
+   const productsArr = [
     {
       id: 1,
       imgSrc: productImage1,

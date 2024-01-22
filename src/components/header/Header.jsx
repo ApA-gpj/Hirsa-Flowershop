@@ -24,6 +24,13 @@ const Header = () => {
     setIsLikedProductShow(!isLikedProductShow);
   };
 
+  const shopHandler = () => {
+    window.scrollTo({
+      top: 1300,
+      behavior: "smooth"
+    });
+  }
+
   return (
     <div className={styles.headerContainer}>
       {isShoppingCardShow && <ShoppingCard cardItems={cardItem} />}
@@ -39,7 +46,7 @@ const Header = () => {
         <Link className={styles.link} to="/home">
           خانه
         </Link>
-        <Link className={styles.link} to="/products">
+        <Link className={styles.link} onClick={shopHandler}>
           محصولات
         </Link>
         <Link className={styles.link} to="/services">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import Header from "./components/header/Header";
 import ImageSlider from "./components/imageSlider/ImageSlider";
@@ -10,17 +10,9 @@ import Products from "./components/products/Products";
 import Customize from "./components/customize/Customize";
 import Instagram from "./components/instagram/Instagram";
 import Footer from "./components/footer/Footer";
-import LikedProducts from "./components/header/LikedProducts";
-
-
-
-
-
 
 function App() {
   const imageUrls = [sliderImg1, sliderImg2];
-
-
 
   return (
     <>
