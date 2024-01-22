@@ -50,6 +50,7 @@
 .link:hover {
   color: #f45d96;
 }
+
 /* icons */
 .iconsContainer {
   display: flex;
@@ -60,9 +61,18 @@
 }
 
 .badge {
-  color: red;
-  font-size: 18px;
+  color: white;
+  font-size: 12px;
   margin-left: -5px;
+  position: relative;
+  left: 35px;
+  top: 0px;
+  background: red;
+  border-radius: 100%;
+  width: 15px;
+  height: 17px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .iconBadge {
@@ -71,4 +81,29 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+/*  shopping card alarm */
+.ShoppingCard {
+  width: 200px;
+  background: #fff;
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px gray;
+  z-index: 2;
+}
+
+.LikedProducts {
+  width: 200px;
+  background: #fff;
+  position: absolute;
+  top: 80px;
+  left: 220px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px gray;
+  z-index: 1;
 }

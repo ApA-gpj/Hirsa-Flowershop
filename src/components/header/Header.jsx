@@ -6,16 +6,28 @@ import { CiHeart } from "react-icons/ci";
 import { IoBagHandle } from "react-icons/io5";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import LikedProducts from "./LikedProducts";
+import ShoppingCard from "./ShoppingCard";
 
 const Header = () => {
+  const [likedProduct, setLikedProduct] = useState([]);
+  const [cardItem, setCardItem] = useState([]);
 
-  const [likes, setLikes] = useState([]);
+  const [isShoppingCardShow, setIsShoppingCardShow] = useState(false);
+  const [isLikedProductShow, setIsLikedProductShow] = useState(false);
 
-  const [shoppingCard, setShoppingCard] = useState([]);
+  const shoppingCardHandler = () => {
+    setIsShoppingCardShow(!isShoppingCardShow);
+  };
+
+  const likedProductHandler = () => {
+    setIsLikedProductShow(!isLikedProductShow);
+  };
 
   return (
-
     <div className={styles.headerContainer}>
+      {isShoppingCardShow && <ShoppingCard cardItems={cardItem} />}
+      {isLikedProductShow && <LikedProducts likedProducts={likedProduct} />}
 
       {/* LOGO */}
       <div>
@@ -44,18 +56,17 @@ const Header = () => {
       {/* ICONS */}
       <div className={styles.iconsContainer}>
         <div>
-          <IoIosSearch fontSize="30px" style={{ cursor: "pointer" }} />
+          <IoIosSearch fontSize="36px" style={{ cursor: "pointer" }} />
         </div>
-        <div className={styles.iconBadge}>
-          <CiHeart fontSize="30px" style={{ cursor: "pointer" }} />{" "}
-          <span className={styles.badge}>{likes.length}</span>
+        <div className={styles.iconBadge} onClick={likedProductHandler}>
+          <CiHeart fontSize="36px" style={{ cursor: "pointer" }} />{" "}
+          <span className={styles.badge}>{likedProduct.length}</span>
         </div>
-        <div className={styles.iconBadge}>
-          <IoBagHandle fontSize="30px" style={{ cursor: "pointer" }} />{" "}
-          <span className={styles.badge}>{shoppingCard.length}</span>
+        <div className={styles.iconBadge} onClick={shoppingCardHandler}>
+          <IoBagHandle fontSize="36px" style={{ cursor: "pointer" }} />{" "}
+          <span className={styles.badge}>{cardItem.length}</span>
         </div>
       </div>
-      
     </div>
   );
 };
