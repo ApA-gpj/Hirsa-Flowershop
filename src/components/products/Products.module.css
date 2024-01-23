@@ -28,9 +28,6 @@
 }
 .productsCatBtn:hover {
   border-bottom: 2px solid #f45d96;
-  color: white;
-  background: #f45d96;
-  border-radius: 5px;
 }
 
 .productCardContainer {
