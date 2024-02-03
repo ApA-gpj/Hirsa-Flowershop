@@ -85,25 +85,66 @@
 
 /*  shopping card alarm */
 .ShoppingCard {
-  width: 200px;
+  width: 400px;
   background: #fff;
   position: absolute;
   top: 80px;
   left: 10px;
-  height: 200px;
   border-radius: 10px;
   box-shadow: 5px 5px 15px gray;
   z-index: 2;
 }
 
 .LikedProducts {
-  width: 200px;
+  width: 280px;
   background: #fff;
   position: absolute;
   top: 80px;
-  left: 220px;
-  height: 200px;
+  left: 200px;
   border-radius: 10px;
   box-shadow: 5px 5px 15px gray;
   z-index: 1;
+}
+
+.productContainerHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 1px solid gray;
+}
+
+.productContentHolder {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+
+.productImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.closeBtn {
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: transparent;
+  color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.totalProductsPrice {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
 }

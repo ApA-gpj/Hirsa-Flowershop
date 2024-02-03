@@ -1,21 +1,34 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './Header.module.css'
+import productsCtx from '../../contexts/productsCtx';
+import { IoTrashBin } from "react-icons/io5";
 
 
-const ShoppingCard = ({cardItems}) => {
+const ShoppingCard = () => {
+    const productCtx = useContext(productsCtx)
+
     return (
         <div className={styles.ShoppingCard}>
-            <p style={{ textAlign: 'center', borderBottom: '1px solid gray', paddingBottom: '5px' }}>لیست خرید</p>
-                {cardItems.map((item) => (
-                    <div key={item.id} className={styles.itemItem}>
-                        {/* عکس محصول */}
-                        <img src={item.image} alt={`تصویر ${item.name}`} />
-                        {/* نام محصول */}
-                        <span>{item.name}</span>
-                        {/* قیمت محصول */}
-                        <span>{item.price} تومان</span>
+            <p style={{ textAlign: 'center' }}>لیست خرید</p>
+            {productCtx.map((item) => (
+                <div key={item.id} className={styles.productContainerHolder}>
+                    <div className={styles.productContentHolder}>
+                        <img src={item.imgSrc} alt={`تصویر ${item.title}`} className={styles.productImage} />
+                        <span>{item.title}</span>
                     </div>
-                ))}
+                    <div className={styles.productContentHolder}>
+                        <span>{item.price.toLocaleString()} تومان</span>
+                        <button className={styles.closeBtn}>
+                            حذف
+                            <IoTrashBin />
+                        </button>
+                    </div>
+                </div>
+            ))}
+            <div className={styles.totalProductsPrice}>
+                <span>جمع سبد خرید:</span>
+                <span> تومان</span>
+            </div>
         </div>
     )
 }

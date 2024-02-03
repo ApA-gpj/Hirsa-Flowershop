@@ -7,14 +7,17 @@
   align-items: center;
   margin-bottom: 50px;
 }
+
 .productsHead {
   color: #f45d96;
   font-size: 32px;
 }
+
 .productsCategories {
   display: flex;
   flex-direction: row;
 }
+
 .productsCatBtn {
   font-size: 16px;
   color: #111111;
@@ -26,6 +29,7 @@
   transition: 0.3s ease;
   background: transparent;
 }
+
 .productsCatBtn:hover {
   border-bottom: 2px solid #f45d96;
 }
@@ -54,10 +58,12 @@
   border-radius: 10px;
   box-shadow: 5px 5px 15px #1111118e;
 }
+
 .productTitle {
   font-size: 20px;
   font-weight: 500;
 }
+
 .productBtn {
   background: #f45d96;
   color: white;
@@ -69,14 +75,17 @@
   margin-top: 10px;
   transition: ease 0.3s;
 }
+
 .productBtn:hover {
   background: #fc2879;
 }
+
 .productPrice {
   color: #111111;
   font-size: 16px;
   font-weight: 600;
 }
+
 .toman {
   font-size: 16px;
   font-weight: 600;
@@ -122,4 +131,37 @@
   color: white;
   background: #f45d96;
   border-radius: 5px;
+}
+
+.toast {
+  background-color: rgb(195, 255, 195);
+  padding: 10px;
+  text-align: center;
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  color: rgb(30, 70, 32);
+  width: 400px;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 23;
+}
+
+.closeBtn {
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(30, 70, 32);
+}
+
+.closeBtn:hover {
+  color: #5c5c5c;
+}
+
+.toastActive {
+  display: flex;
 }

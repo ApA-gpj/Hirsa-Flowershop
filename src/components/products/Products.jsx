@@ -1,111 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import styles from "./Products.module.css";
 import { CiHeart } from "react-icons/ci";
 import { IoBagHandle } from "react-icons/io5";
-import productImage1 from "../../assets/productsImages/product1.webp";
-import productImage2 from "../../assets/productsImages/product2.webp";
-import productImage3 from "../../assets/productsImages/product3.webp";
-import productImage4 from "../../assets/productsImages/product4.webp";
-import productImage5 from "../../assets/productsImages/product5.webp";
-import productImage6 from "../../assets/productsImages/product6.webp";
-import productImage7 from "../../assets/productsImages/product7.webp";
-import productImage8 from "../../assets/productsImages/product8.webp";
-import productImage9 from "../../assets/productsImages/product9.webp";
-import productImage10 from "../../assets/productsImages/product10.webp";
+import productsCtx from "../../contexts/productsCtx";
+
 
 const Products = () => {
-  const productsArr = [
-    {
-      id: 1,
-      imgSrc: productImage1,
-      title: "شاخه گل رز سرخ طبیعی",
-      price: 60_000,
-      category: "شاخه گل",
-      isLiked: false,
-      isHovered: false,
-    },
-    {
-      id: 2,
-      imgSrc: productImage2,
-      title: "شاخه گل نرگس طبیعی",
-      price: 60_000,
-      category: "شاخه گل",
-      isLiked: false,
-      isHovered: false,
-    },
-    {
-      id: 3,
-      imgSrc: productImage3,
-      title: "گل آپارتمانی کروتون",
-      price: 1_500_000,
-      category: "گیاهان آپارتمانی",
-      isLiked: false,
-      isHovered: false,
-    },
-    {
-      id: 4,
-      imgSrc: productImage4,
-      title: "گل آپارتمانی بابا آدم",
-      price: 2_500_000,
-      category: "گیاهان آپارتمانی",
-      isLiked: false,
-      isHovered: false,
-    },
-    {
-      id: 5,
-      imgSrc: productImage5,
-      title: "دسته گل ویژه هیرسا",
-      price: 1_250_000,
-      category: "دسته گل",
-      isLiked: false,
-      isHovered: false,
-    },
-    {
-      id: 6,
-      imgSrc: productImage6,
-      title: "دسته گل عروس",
-      price: 4_000_000,
-      category: "دسته گل",
-      isLiked: false,
-      isHovered: false,
-    },
-    {
-      id: 7,
-      imgSrc: productImage7,
-      title: "تاج گل ختمی",
-      price: 3_000_000,
-      category: "تاج گل",
-      isLiked: false,
-      isHovered: false,
-    },
-    {
-      id: 8,
-      imgSrc: productImage8,
-      title: "تاج گل هپی مپی",
-      price: 3_500_000,
-      category: "تاج گل",
-      isLiked: false,
-      isHovered: false,
-    },
-    {
-      id: 9,
-      imgSrc: productImage9,
-      title: "پک کادویی ولنتاین",
-      price: 1_500_000,
-      category: "بسته‌های کادویی",
-      isLiked: false,
-      isHovered: false,
-    },
-    {
-      id: 10,
-      imgSrc: productImage10,
-      title: "پک کادویی تولد",
-      price: 1_500_000,
-      category: "بسته‌های کادویی",
-      isLiked: false,
-      isHovered: false,
-    },
-  ];
+
+  const productsArr = useContext(productsCtx)
 
   const allCategories = [
     "همه",
@@ -115,6 +17,9 @@ const Products = () => {
   const [product, setProduct] = useState(productsArr);
   const [category, setCategory] = useState(allCategories);
   const [activeCategory, setActiveCategory] = useState("همه");
+  const [isFavouriteToastShow, setIsFavouriteToastShow] = useState(false)
+  const [isBasketToastShow, setIsBasketToastShow] = useState(false)
+
 
   const filterMenus = (category) => {
     if (category === "همه") {
@@ -125,8 +30,55 @@ const Products = () => {
     setProduct(filteredMenus);
   };
 
+  const shopToast = useRef()
+  const favouriteToast = useRef()
+
+  const addToFavouriteHandler = () => {
+    setIsFavouriteToastShow(true)
+    setTimeout(() => {
+      setIsFavouriteToastShow(false)
+    }, 2500);
+    if (isBasketToastShow === true) {
+      favouriteToast.current.style.top = "65px";
+    } else {
+      favouriteToast.current.style.top = "10px";
+    }
+  }
+
+  const favoriteToastCloser = () => {
+    setIsFavouriteToastShow(false)
+  }
+
+  const addToBasketHandler = () => {
+    setIsBasketToastShow(true)
+    setTimeout(() => {
+      setIsBasketToastShow(false)
+    }, 2500);
+    if (isFavouriteToastShow === true) {
+      shopToast.current.style.top = "65px";
+    } else {
+      shopToast.current.style.top = "10px";
+    }
+  }
+
+  const basketToastCloser = () => {
+    setIsBasketToastShow(false)
+  }
+
   return (
     <div className={styles.productsContainer}>
+
+      {/* toasts for add to favorite */}
+      <div className={`${styles.toast} ${isFavouriteToastShow ? `${styles.toastActive}` : ''}`} ref={favouriteToast}>
+        <p >محصول به مورد علاقه‌ها افزوده شد.</p>
+        <button className={styles.closeBtn} onClick={favoriteToastCloser}>x</button>
+      </div>
+      {/* toasts for add to basket */}
+      <div className={`${styles.toast} ${isBasketToastShow ? `${styles.toastActive}` : ''}`} ref={shopToast}>
+        <p >محصول به سبد خرید افزوده شد.</p>
+        <button className={styles.closeBtn} onClick={basketToastCloser}>x</button>
+      </div>
+
       <div className={styles.productsHead}>
         <h4>محصولات ما</h4>
       </div>
@@ -134,9 +86,8 @@ const Products = () => {
         {category.map((categories, index) => (
           <button
             key={index}
-            className={`${styles.productsCatBtn} ${
-              categories === activeCategory ? `${styles.active}` : ""
-            } `}
+            className={`${styles.productsCatBtn} ${categories === activeCategory ? `${styles.active}` : ""
+              } `}
             onClick={() => {
               setActiveCategory(categories);
               filterMenus(categories);
@@ -151,10 +102,10 @@ const Products = () => {
           <div className={styles.productCard} key={item.id}>
             {/* btns */}
             <div className={styles.btnContainer}>
-              <div className={styles.btnContent}>
+              <div className={styles.btnContent} onClick={addToFavouriteHandler}>
                 <CiHeart className={styles.btnIcon} />
               </div>
-              <div className={styles.btnContent}>
+              <div className={styles.btnContent} onClick={addToBasketHandler}>
                 <IoBagHandle className={styles.btnIcon} />
               </div>
             </div>
