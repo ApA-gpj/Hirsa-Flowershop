@@ -8,7 +8,7 @@ const LikedProducts = () => {
     return (
         <div className={styles.LikedProducts}>
             <p style={{ textAlign: 'center' }}>کالاهای مورد علاقه</p>
-            {productCtx.productsContent.map(product => (
+            {productCtx.productData.map(product => (
                 <div key={product.id} className={styles.productContainerHolder}>
                     <div className={styles.productContentHolder}>
                         <img src={product.imgSrc} alt={product.title} className={styles.productImage} />

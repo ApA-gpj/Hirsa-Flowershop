@@ -10,7 +10,7 @@ const ShoppingCard = () => {
     return (
         <div className={styles.ShoppingCard}>
             <p style={{ textAlign: 'center' }}>لیست خرید</p>
-            {productCtx.productsContent.map((item) => (
+            {productCtx.productData.map((item) => (
                 <div key={item.id} className={styles.productContainerHolder}>
                     <div className={styles.productContentHolder}>
                         <img src={item.imgSrc} alt={`تصویر ${item.title}`} className={styles.productImage} />

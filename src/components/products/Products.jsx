@@ -37,7 +37,7 @@ const Products = () => {
     setIsFavouriteToastShow(true)
     setTimeout(() => {
       setIsFavouriteToastShow(false)
-    }, 5000);
+    }, 2500);
     if (isBasketToastShow === true) {
       favouriteToast.current.style.top = "10px";
       shopToast.current.style.top = "65px";
@@ -54,7 +54,7 @@ const Products = () => {
     setIsBasketToastShow(true)
     setTimeout(() => {
       setIsBasketToastShow(false)
-    }, 5000);
+    }, 2500);
     if (isFavouriteToastShow === true) {
       shopToast.current.style.top = "10px";
       favouriteToast.current.style.top = "65px";
