@@ -120,18 +120,10 @@ function App() {
   ];
 
   const [productData, setProductsData] = useState(productsContent)
-  const [userCart, setUserCart] = useState(false)
-  const [userFavorite, setUserFavorite] = useState(false)
 
   return (
     <>
-      <productsCtx.Provider value={{
-        productData,
-        userCart,
-        setUserCart,
-        userFavorite,
-        setUserFavorite
-      }}>
+      <productsCtx.Provider value={productData}>
 
         <Header />
         <ImageSlider images={imageUrls} />

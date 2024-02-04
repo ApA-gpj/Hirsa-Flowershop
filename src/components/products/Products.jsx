@@ -11,7 +11,7 @@ const Products = () => {
 
   const allCategories = [
     "همه",
-    ...new Set(productsArr.productData.map((data) => data.category)),
+    ...new Set(productsArr.map((data) => data.category)),
   ];
 
   const [product, setProduct] = useState(productsArr);
@@ -100,7 +100,7 @@ const Products = () => {
         ))}
       </div>
       <div className={styles.productCardContainer}>
-        {product.productData.map((item) => (
+        {product.map((item) => (
           <div className={styles.productCard} key={item.id}>
             {/* btns */}
             <div className={styles.btnContainer}>
