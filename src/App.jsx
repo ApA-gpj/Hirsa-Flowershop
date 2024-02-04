@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./App.css";
 import Header from "./components/header/Header";
 import ImageSlider from "./components/imageSlider/ImageSlider";
@@ -119,9 +119,19 @@ function App() {
     },
   ];
 
+  // const [productData, setProductsData] = useState(productsContent)
+  const [userCart, setUserCart] = useState(false)
+  const [userFavorite, setUserFavorite] = useState(false)
+
   return (
     <>
-      <productsCtx.Provider value={productsContent}>
+      <productsCtx.Provider value={{
+        productsContent,
+        userCart,
+        setUserCart,
+        userFavorite,
+        setUserFavorite
+      }}>
 
         <Header />
         <ImageSlider images={imageUrls} />

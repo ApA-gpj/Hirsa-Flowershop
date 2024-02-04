@@ -11,7 +11,7 @@ const Products = () => {
 
   const allCategories = [
     "همه",
-    ...new Set(productsArr.map((data) => data.category)),
+    ...new Set(productsArr.productsContent.map((data) => data.category)),
   ];
 
   const [product, setProduct] = useState(productsArr);
@@ -19,6 +19,9 @@ const Products = () => {
   const [activeCategory, setActiveCategory] = useState("همه");
   const [isFavouriteToastShow, setIsFavouriteToastShow] = useState(false)
   const [isBasketToastShow, setIsBasketToastShow] = useState(false)
+
+  const shopToast = useRef()
+  const favouriteToast = useRef()
 
 
   const filterMenus = (category) => {
@@ -30,16 +33,14 @@ const Products = () => {
     setProduct(filteredMenus);
   };
 
-  const shopToast = useRef()
-  const favouriteToast = useRef()
-
   const addToFavouriteHandler = () => {
     setIsFavouriteToastShow(true)
     setTimeout(() => {
       setIsFavouriteToastShow(false)
-    }, 2500);
+    }, 5000);
     if (isBasketToastShow === true) {
-      favouriteToast.current.style.top = "65px";
+      favouriteToast.current.style.top = "10px";
+      shopToast.current.style.top = "65px";
     } else {
       favouriteToast.current.style.top = "10px";
     }
@@ -53,9 +54,10 @@ const Products = () => {
     setIsBasketToastShow(true)
     setTimeout(() => {
       setIsBasketToastShow(false)
-    }, 2500);
+    }, 5000);
     if (isFavouriteToastShow === true) {
-      shopToast.current.style.top = "65px";
+      shopToast.current.style.top = "10px";
+      favouriteToast.current.style.top = "65px";
     } else {
       shopToast.current.style.top = "10px";
     }
@@ -98,7 +100,7 @@ const Products = () => {
         ))}
       </div>
       <div className={styles.productCardContainer}>
-        {product.map((item) => (
+        {product.productsContent.map((item) => (
           <div className={styles.productCard} key={item.id}>
             {/* btns */}
             <div className={styles.btnContainer}>
@@ -133,7 +135,7 @@ const Products = () => {
 
             {/* add to cart */}
             <div>
-              <button className={styles.productBtn}>
+              <button className={styles.productBtn} onClick={addToBasketHandler}>
                 اضافه کردن به سبد خرید
               </button>
             </div>

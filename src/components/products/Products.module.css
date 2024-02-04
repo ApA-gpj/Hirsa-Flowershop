@@ -113,7 +113,6 @@
   cursor: pointer;
   position: relative;
   transition: transform 0.5s ease;
-
 }
 
 .btnIcon {
@@ -133,6 +132,7 @@
   border-radius: 5px;
 }
 
+/* Toast Styles */
 .toast {
   background-color: rgb(195, 255, 195);
   padding: 10px;
@@ -148,6 +148,7 @@
   left: 10px;
   top: 10px;
   z-index: 23;
+  transition: top 0.5s, opacity 0.5s;
 }
 
 .closeBtn {
@@ -164,4 +165,29 @@
 
 .toastActive {
   display: flex;
+  top: 10px;
+  opacity: 1;
+}
+
+/* Toast Animations */
+.toast-enter {
+  opacity: 0;
+  top: -50px;
+}
+
+.toast-enter-active {
+  opacity: 1;
+  top: 10px;
+  transition: opacity 0.5s, top 0.5s;
+}
+
+.toast-exit {
+  opacity: 1;
+  top: 10px;
+}
+
+.toast-exit-active {
+  opacity: 0;
+  top: -50px;
+  transition: opacity 0.5s, top 0.5s;
 }
