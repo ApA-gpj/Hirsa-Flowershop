@@ -119,14 +119,14 @@ function App() {
     },
   ];
 
-  // const [productData, setProductsData] = useState(productsContent)
+  const [productData, setProductsData] = useState(productsContent)
   const [userCart, setUserCart] = useState(false)
   const [userFavorite, setUserFavorite] = useState(false)
 
   return (
     <>
       <productsCtx.Provider value={{
-        productsContent,
+        productData,
         userCart,
         setUserCart,
         userFavorite,
